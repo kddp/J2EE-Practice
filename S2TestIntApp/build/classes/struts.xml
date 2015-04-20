@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="test" extends="struts-default">
+		
+		<interceptors>
+			<interceptor name="auth" class="com.uttara.s2.AuthInterceptor"/>
+		</interceptors>
+		
+		<action name="process" class="com.uttara.s2.ProcessAction">
+			<result>Success.jsp</result>
+			<result name="error">Welcome.jsp</result>
+		</action>
+		
+		<action name="test" class="com.uttara.s2.TestAction">
+			<result>Success.jsp</result>
+		</action>
+		
+		<action name="openCityView" class="com.uttara.s2.CityAction">
+			<result>Input.jsp</result>
+		</action>
+		<action name="openDataView" class="com.uttara.s2.DataAction">
+			<result>DataOutput.jsp</result>
+		</action>
+		
+		<action name="openWelcomeView" class="com.uttara.s2.WelcomeAction">
+			<interceptor-ref name="auth"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">Welcome.jsp</result>
+		
+		</action>
+	</package>
+
+</struts>
