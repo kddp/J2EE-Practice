@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 14, 2014 12:06:18 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.test.Message" table="MESSAGE">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="text" type="java.lang.String">
+            <column name="TEXT" />
+        </property>
+        <property name="dateOfCr" type="java.util.Date">
+            <column name="DATEOFCR" />
+        </property>
+    </class>
+</hibernate-mapping>
