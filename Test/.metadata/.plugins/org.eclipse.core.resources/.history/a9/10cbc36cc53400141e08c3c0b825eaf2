@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+
+public class MovieRating
+{
+	public static double calculate(int[] mark,int lowCount,int highCount)
+	{
+			
+			
+			double average = 0;
+			
+			Arrays.sort(mark);
+			int size = mark.length;
+			
+			int sum = lowCount+highCount;
+			
+			int newMarks[] = new int [size-sum];
+			
+			for (int i = 0; i < newMarks.length; i++) 
+			{
+				newMarks[i] = mark[i];			
+			}
+			
+			for (int i = 0; i < newMarks.length; i++) 
+			{
+				//System.out.println(newMarks[i]);
+				average = average+newMarks[i];
+			}
+			System.out.println((average/newMarks.length));
+			return (average/newMarks.length);
+		
+	}
+	public static void main(String[] args) 
+	{
+		int mark[] = {70,99,96,0,30};
+		int lowCount = 0;
+		int highCount = 0;
+		
+		calculate(mark, lowCount, highCount);
+		
+		
+		 
+		
+		
+	}
+}

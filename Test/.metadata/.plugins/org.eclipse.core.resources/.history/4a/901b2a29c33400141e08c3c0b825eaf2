@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+
+public class MovieRating
+{
+	public static void main(String[] args) 
+	{
+		int mark[] = {70,99,96,0,30};
+		int lowCount = 0;
+		int highCount = 0;
+		
+		Arrays.sort(mark);
+		int size = mark.length;
+		int newMarks[] = new int [size-2];
+		
+		for (int i = 0; i < newMarks.length; i++) 
+		{
+			newMarks[i] = marks
+			
+			
+		}
+		
+		
+	}
+}
