@@ -1,0 +1,26 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    
+    <field name="bean.email">
+        <field-validator type="requiredstring">
+            <message key="registerview.email.empty"/>
+        </field-validator>
+    </field>
+   
+    <field name="bean.email">
+        <field-validator type="email">
+            <message key="registerview.email.invalid"/>
+        </field-validator>
+    </field>    
+    
+    <field name="bean.pass">
+        <field-validator type="requiredstring">
+            <message key="registerview.pass.empty"/>
+        </field-validator>
+	</field>  
+ 
+     
+</validators>

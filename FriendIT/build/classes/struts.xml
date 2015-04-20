@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+ 	<constant name="struts.ui.theme" value="css_xhtml"/>
+ 	<constant name="struts.custom.i18n.resources" value="MessageResources"/>
+ 	
+    <package name="test" extends="struts-default">
+    		
+    		<action name="openRegisterView">
+	    		<result>Register.jsp</result>
+	    	</action>
+	    	
+	    	<action name="register" class="com.uttara.s2.RegisterAction">
+	    		<result name="success">Success.jsp</result>
+	    		<result name="input">Register.jsp</result>
+	    	</action>
+	    	
+	    	<action name="openLoginView">
+	    		<result>LoginView.jsp</result>
+	    	</action>
+	    	
+	    	<action name="openWelcomeView">
+	    		<result>HomePage.jsp</result>
+	    	</action>
+	    	
+	    	<action name="login" class="com.uttara.s2.LoginAction">
+	    		<result name="input">LoginView.jsp</result>
+	    		<result name="success">MyWall.jsp</result>
+	    	</action>
+	    	
+	    	<action name="logout" class="com.uttara.s2.LogoutAction">
+	    			<result name="success">LoginView.jsp</result>
+	    	</action>
+	    	
+	    	<action name="editAccount" class="com.uttara.s2.EditAccountAction">
+	    		<result name="success">EditAccountView.jsp</result>
+	    	</action>
+	    	
+	    	<action name="gotoWall">
+	    		<result>MyWall.jsp</result>
+	    	</action>
+	    	
+	    	<action name="update" class="com.uttara.s2.UpdateAction">
+	    		<result name="success" >logout</result>
+	    		<result name="input">EditAccountView.jsp</result>
+	    	</action>
+	    	
+	    	<action name="myfriends" class="com.uttara.s2.LogoutAction" method="getFriends">
+	    		<result>MyFriend.jsp</result>
+	    	</action>
+	    	
+	    	<action name="myMessage" class="com.uttara.s2.GetMessage">
+	    		<result>MyMessage.jsp</result>
+	    	</action>
+	    	
+	    	<action name="posttomywall" class="com.uttara.s2.PostAction">
+	    		<result>MyWall.jsp</result>
+	    		
+	    	</action>
+	    	
+	    	<action name="friendwall" class="com.uttara.s2.FriendWallAction">
+	    		<result>MyFriendWall.jsp</result>
+	    	</action>
+	    	
+	    	<action name="posttofrndwall" class="com.uttara.s2.PostAction"  method="postMyFriendWall">
+	    		<result name="success">MyFriendWall.jsp</result>
+	    	</action>
+	    	
+	    	<action name="mssgttofrndwall" class="com.uttara.s2.PostAction"  method="mssgMyFriendWall" >
+	    		<result name="success">MyFriendWall.jsp</result>
+	    	</action>
+	    	
+	    	<action name="sendinvite" class="com.uttara.s2.SendEmailAction">
+	    		<result name="success">MyWall.jsp</result>
+	    		<result name="input">MyWall.jsp</result>
+	    	</action>
+	    	    
+    </package>
+
+</struts>
+
+
+

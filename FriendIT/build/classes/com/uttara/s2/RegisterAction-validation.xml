@@ -1,0 +1,68 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    
+    <field name="bean.email">
+        <field-validator type="requiredstring">
+            <message key="registerview.email.empty"/>
+        </field-validator>
+    </field>
+   
+    <field name="bean.email">
+        <field-validator type="email">
+            <message key="registerview.email.invalid"/>
+        </field-validator>
+    </field>    
+   
+    <field name="bean.dob">
+        <field-validator type="date">
+            <message key="registerview.date.empty"/>
+        </field-validator>
+    </field>  
+    
+   
+    <field name="bean.fname">
+        <field-validator type="requiredstring">
+            <message key="registerview.fname.empty"/>
+        </field-validator>
+    </field>  
+   
+    <field name="bean.lname">
+        <field-validator type="requiredstring">
+            <message key="registerview.lname.empty"/>
+        </field-validator>
+    </field>   
+   
+    <field name="bean.rpass">
+        <field-validator type="requiredstring">
+            <message key="registerview.rpass.empty"/>
+        </field-validator>
+    </field>        
+   
+    <field name="bean.pass">
+        <field-validator type="requiredstring">
+            <message key="registerview.pass.empty"/>
+        </field-validator>
+	</field>  
+ 
+    <field name="bean.pic">
+        <field-validator type="required">
+            <message key="registerview.file.empty"/>
+        </field-validator>
+    </field> 
+
+    <field name="bean.moreAbtMe">
+        <field-validator type="requiredstring">
+            <message key="registerview.moreAbtMe.empty"/>
+        </field-validator>
+    </field>  
+    
+    <validator type="expression">   
+        <param name="expression">bean.pass==bean.rpass</param>  
+        <message key="registerview.pass.rpass.unequal"/>
+    </validator>  
+  
+     
+</validators>
