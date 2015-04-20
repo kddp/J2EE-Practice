@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+	<bean id="guitar" class="test.Guitar"></bean>
+	
+	<bean id="drum"  class="test.DrumSet"></bean>
+	
+	<bean id="audiens" class="test.Audiens"></bean>
+	
+	<bean id="performer1" class="test.Instrumentalist">
+		<property name="instrument" ref="guitar"/>
+		<property name="name" value="A.R Rehman"/>
+	</bean>
+	
+	<bean id="performer2" class="test.Instrumentalist">
+		<property name="instrument" ref="drum"/>
+		<property name="name" value="Himesh Reshammiya"/>
+	</bean>
+	
+	
+	
+	<aop:config>
+		<aop:aspect ref="audiens">
+			<aop:before pointcut="execution( * test.Performer.perform(..))"  method="turnfOffCellPhone"/>
+			<aop:before pointcut="execution( * test.Performer.perform(..))" method="takeSeat"/>
+			<aop:after-returning pointcut="execution( * test.Performer.perform(..))" method="applaud"/>
+			<aop:after-throwing  pointcut="execution( * test.Performer.perform(..))" method="demandRefund"/>
+			<aop:after pointcut="execution( * test.Performer.perform(..))" method="turnCellPhoneOn"/>
+		</aop:aspect>
+	</aop:config>
+	
+	
+
+</beans>
